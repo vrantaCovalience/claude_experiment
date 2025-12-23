@@ -1,0 +1,23 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(if [ -d .cursor ])",
+      "Bash(then ls -la .cursor/)",
+      "Bash(fi)",
+      "Bash(if [ -f .cursorrules ])",
+      "Bash(then cat .cursorrules)",
+      "Bash(if [ -d .github ])",
+      "Bash(then ls -la .github/)",
+      "Bash(git checkout:*)",
+      "Bash(git add:*)",
+      "Bash(git commit -m \"$\\(cat <<''EOF''\nInitial project setup with Next.js 16, shadcn/ui integration, and Tailwind CSS v4\n\n- Configure Tailwind CSS v4 with shadcn/ui theming system\n- Add support for light/dark mode with CSS custom properties\n- Install core dependencies: class-variance-authority, clsx, lucide-react, tailwind-merge\n- Simplify home page with navigation links to login and register routes\n- Add CLAUDE.md for project documentation and development guidelines\n- Configure shadcn/ui with components.json\n- Set up utility functions in lib/ directory\n\n🤖 Generated with [Claude Code]\\(https://claude.com/claude-code\\)\n\nCo-Authored-By: Claude Sonnet 4.5 <noreply@anthropic.com>\nEOF\n\\)\")",
+      "Bash(git push:*)",
+      "mcp__github__create_pull_request",
+      "mcp__github__request_copilot_review",
+      "mcp__github__merge_pull_request"
+    ]
+  },
+  "enabledPlugins": {
+    "example-skills@anthropic-agent-skills": true
+  }
+}

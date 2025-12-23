@@ -84,3 +84,25 @@ import Component from "@/app/component";
 - Uses new `@import "tailwindcss"` syntax (not @tailwind directives)
 - Theme configuration via `@theme inline` in globals.css
 - No tailwind.config.js file - configuration in CSS
+
+### shadcn/ui Integration
+
+This project uses shadcn/ui for UI components with the "new-york" style variant:
+
+- **Component Installation**: Use `npx shadcn@latest add <component-name>` to add new components
+- **Component Location**: UI components are installed to `components/ui/`
+- **Utility Function**: `lib/utils.ts` exports a `cn()` helper that merges Tailwind classes using `clsx` and `tailwind-merge`
+- **Icon Library**: lucide-react is configured as the icon library
+- **Path Aliases**: Configured in `components.json`:
+  - `@/components` → components directory
+  - `@/lib` → lib directory
+  - `@/ui` → components/ui directory
+  - `@/hooks` → hooks directory
+
+**Component Usage Pattern**:
+```typescript
+import { Button } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
+```
+
+Components use class-variance-authority (CVA) for variant management and are built with Radix UI primitives.
